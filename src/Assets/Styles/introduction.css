@@ -1,0 +1,16 @@
+.introduction-section {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   height: calc(100vh - 6rem);
+}
+
+.introduction-wrapper-1 {
+   height: calc(100% / 2);
+}
+
+.introduction-wrapper-2 {
+   height: calc(100% / 2);
+
+   background: #000;
+}

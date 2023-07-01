@@ -1,24 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
 :root {
-   --first-color: #2c7a7b;
-   --second-color: #c0f6eb;
+   --first-color: #3a999b;
+   --second-color: #88e8d5;
    --light-color: #f4fdff;
    --dark-color: #282d35;
    --gray-color-75: #dadee7;
-   --gray-color-100: #b5bcc5;
+   --gray-color-100: #9ea6b1;
    --gray-color-200: #566683;
    --link-color: #3d7aed;
    --main-bg: #f1e7db;
-   --opacity-bg: #ffffffbe;
    --header-height: 4.5rem;
+   --oppacity: rgba(58, 153, 155, 0.3);
 }
 
 * {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-   transition: all 0.1s;
+   transition: all 0.3s;
 }
 
 body {
@@ -27,17 +27,19 @@ body {
    font-family: 'Ubuntu', sans-serif;
    background-color: var(--main-bg);
 }
-.dark body {
-   --first-color: #c0f6eb;
+body.darkTheme {
+   --first-color: #9fded1;
    --second-color: #2c7a7b;
    --light-color: #282d35;
    --dark-color: #f4fdff;
+   --gray-color-75: #566683;
+   --gray-color-100: #9ea6b1;
+   --gray-color-200: #dadee7;
    --main-bg: #282d35;
-   --opacity-bg: #ffffffbe;
    --header-height: 4.5rem;
    --link-color: #df80bb;
+   --oppacity: rgba(159, 222, 209, 0.3);
 }
-
 html {
    scroll-behavior: smooth;
    scroll-snap-stop: 4rem;
@@ -73,6 +75,12 @@ li {
 
 a {
    text-decoration: none;
+}
+
+.app {
+   background-image: url(../Images/background-2.png);
+   background-size: cover;
+   background-position: center;
 }
 
 .app-section {

@@ -1,4 +1,92 @@
-.home-pırt {
+.home-section {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   height: 100vh;
+}
+
+.home-wrapper {
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+   text-align: center;
+}
+
+.home-brand-introduction {
+   font-size: 2rem;
+   color: var(--dark-color);
+   padding: 1rem 0.5rem;
+   background-color: var(--second-color);
+   opacity: 0.7;
+   border-radius: 0.5rem;
+}
+
+.home-brand-free {
+   color: var(--light-color);
+   padding: 0.5rem 0.25rem;
    background-color: var(--dark-color);
-   height: 2rem;
+   opacity: 0.7;
+   border-radius: 0.5rem;
+   display: inline-block;
+}
+
+.home-brand-click {
+   color: var(--light-color);
+   padding: 0.5rem 0.25rem;
+   background-color: var(--dark-color);
+   opacity: 0.7;
+   border-radius: 0.5rem;
+   display: flex;
+   display: inline-block;
+}
+
+.home-brand-button {
+   display: flex;
+   justify-content: center;
+}
+
+.home-brand-button-text {
+   box-shadow: 0 4px 8px 4px var(--oppacity);
+   padding: 1.5rem 6rem;
+   background-color: var(--first-color);
+   cursor: pointer;
+   border-radius: 0.5rem;
+   font-weight: 600;
+   font: 2rem;
+   color: var(--light-color);
+}
+
+.home-brand-button-text:hover {
+   background-color: var(--second-color);
+   color: var(--dark-color);
+}
+
+.home-down-button {
+   position: absolute;
+   padding: 4px;
+   left: auto;
+   right: auto;
+   font-size: 2rem;
+   bottom: 13px;
+   cursor: pointer;
+   animation: moveUpDown 1.5s ease-in-out infinite alternate;
+   color: var(--second-color);
+}
+
+@keyframes moveUpDown {
+   0% {
+      transform: translateY(0);
+      font-variant: var(--first-color);
+   }
+   50% {
+      transform: translateY(-20px);
+
+      color: var(--second-color);
+   }
+   100% {
+      transform: translateY(0);
+      scale: 1.27;
+      font-variant: var(--first-color);
+   }
 }

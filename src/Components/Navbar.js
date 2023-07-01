@@ -11,9 +11,9 @@ function Navbar() {
 
    useEffect(() => {
       if (isNightMode) {
-         document.body.classList.add('dark');
+         document.body.classList.add('darkTheme');
       } else {
-         document.body.classList.remove('dark');
+         document.body.classList.remove('darkTheme');
       }
       console.log(isNightMode);
    }, [isNightMode]);
@@ -22,7 +22,10 @@ function Navbar() {
       <div className="header">
          <div className="header-container container">
             <Link to="/">
-               <div className="logo-area">WithLang</div>
+               <div className="logo-area">
+                  <span className="logo-first"> With</span>
+                  <span className="logo-second">Lang</span>
+               </div>
             </Link>
 
             <div className="navbar-right">
@@ -33,11 +36,11 @@ function Navbar() {
                   }`}
                >
                   {isNightMode ? (
-                     <div className="night-icon">
+                     <div className="day-icon">
                         <FaSun />
                      </div>
                   ) : (
-                     <div className="day-icon">
+                     <div className="night-icon">
                         <MdNightlight />
                      </div>
                   )}

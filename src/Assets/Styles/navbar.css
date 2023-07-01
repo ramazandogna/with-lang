@@ -18,23 +18,34 @@
 
 .logo-area {
    font-size: 2rem;
-   color: var(--dark-color);
+   font-weight: 500;
+}
+
+.logo-first {
+   color: var(--first-color);
+}
+
+.logo-second {
+   border-bottom: 4px solid var(--first-color);
+   padding-right: 2px;
+   border-right: 4px solid var(--second-color);
+   color: var(--second-color);
 }
 
 .login-button {
    cursor: pointer;
    padding: 10px 20px;
    font-size: 20px;
-   color: var(--light-color);
-   background-color: var(--dark-color);
-   border: 1px solid var(--light-color);
+   color: var(--dark-color);
+   background-color: var(--second-color);
+   border: 1px solid var(--first-color);
    border-radius: 0.5rem;
 }
 
 .login-button:hover {
-   color: var(--dark-color);
-   background-color: var(--light-color);
-   border: 1px solid var(--dark-color);
+   color: var(--first-color);
+   background-color: var(--second-color);
+   border: 1px solid var(--first-color);
 }
 
 .navbar-right {
@@ -65,12 +76,12 @@
    border-radius: 0.5rem;
    color: var(--dark-color);
    cursor: pointer;
-   background-color: #fbd38d;
+   background-color: #e4b158;
    transition: transform 0.3s ease-out;
 }
 
 .day-icon:hover {
-   background-color: #f7c46b;
+   background-color: #dba23f;
 }
 
 .nightMode:active .night-icon {
