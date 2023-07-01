@@ -78,9 +78,11 @@ a {
 }
 
 .app {
-   background-image: url(../Images/background-2.png);
+   background-image: url(../Images/background-1.png);
    background-size: cover;
    background-position: center;
+   background-repeat: no-repeat;
+   height: 100vh;
 }
 
 .app-section {
