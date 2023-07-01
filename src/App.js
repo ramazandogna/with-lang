@@ -1,12 +1,17 @@
 import './Assets/Styles/global.css';
 
+import Home from './Pages/Home';
+import Navbar from './Components/Navbar';
+
 function App() {
    return (
       <div>
-         <p>Hello world</p>
-         <h2>Hello World2</h2>
-         <h3>Hello World2</h3>
-         <div>div</div>
+         <Navbar />
+         <div className="app-section">
+            <div className="container">
+               <Home />
+            </div>
+         </div>
       </div>
    );
 }

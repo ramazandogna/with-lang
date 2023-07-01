@@ -1,0 +1,90 @@
+.header {
+   display: flex;
+   align-items: center;
+   width: 100%;
+   height: var(--header-height);
+   background-color: var(--he);
+   position: fixed;
+   backdrop-filter: blur(16px);
+   z-index: 10;
+   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.header-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.logo-area {
+   font-size: 2rem;
+   color: var(--dark-color);
+}
+
+.login-button {
+   cursor: pointer;
+   padding: 10px 20px;
+   font-size: 20px;
+   color: var(--light-color);
+   background-color: var(--dark-color);
+   border: 1px solid var(--light-color);
+   border-radius: 0.5rem;
+}
+
+.login-button:hover {
+   color: var(--dark-color);
+   background-color: var(--light-color);
+   border: 1px solid var(--dark-color);
+}
+
+.navbar-right {
+   display: flex;
+   gap: 0.5rem;
+   align-items: center;
+}
+
+.night-icon {
+   display: flex;
+   align-items: center;
+   padding: 13px;
+   border-radius: 0.5rem;
+   color: var(--light-color);
+   cursor: pointer;
+   background-color: #805ad5;
+   transition: transform 0.3s ease-out;
+}
+
+.night-icon:hover {
+   background-color: #6e3bdb;
+}
+
+.day-icon {
+   display: flex;
+   align-items: center;
+   padding: 13px;
+   border-radius: 0.5rem;
+   color: var(--dark-color);
+   cursor: pointer;
+   background-color: #fbd38d;
+   transition: transform 0.3s ease-out;
+}
+
+.day-icon:hover {
+   background-color: #f7c46b;
+}
+
+.nightMode:active .night-icon {
+   transform: translateY(100%);
+}
+
+.nightMode:active .day-icon {
+   transform: translateY(100%);
+}
+
+.dayMode:active .night-icon {
+   transform: translateY(100%);
+}
+
+.dayMode:active .day-icon {
+   transform: translateY(100%);
+}

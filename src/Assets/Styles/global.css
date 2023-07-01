@@ -61,3 +61,49 @@ h3 {
    font-weight: 500;
    border-bottom: 4px solid var(--dark-color);
 }
+
+/* a {
+   color: var(--link-color);
+   border-bottom: 2px solid var(--link-color);
+} */
+
+li {
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+}
+
+.app-section {
+   position: relative;
+   padding-top: calc(var(--header-height) + 1.5rem);
+}
+
+.section {
+   padding: 2.5rem 0;
+}
+
+.container {
+   position: relative;
+   width: 100%;
+   max-width: 1320px;
+   margin: auto;
+   padding: 0 1rem;
+}
+
+@media screen and (max-width: 1500px) {
+   .container {
+      width: 1140px;
+   }
+}
+@media screen and (max-width: 1300px) {
+   .container {
+      width: 996px;
+   }
+}
+@media screen and (max-width: 992px) {
+   .container {
+      width: 100%;
+   }
+}
