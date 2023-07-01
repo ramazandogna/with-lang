@@ -1,20 +1,33 @@
 import './Assets/Styles/global.css';
 
-import Home from './Pages/Home';
-import Introduction from './Pages/Introduction';
+import { Route, Routes } from 'react-router-dom';
+
+import Footer from './Components/Footer';
+import HomePage from './Pages/HomePage';
 import Navbar from './Components/Navbar';
-import SSS from './Pages/SSS';
+import SignPage from './Pages/SignPage';
 
 function App() {
    return (
       <div className="app">
          <Navbar />
 
-         <div className="container">
-            <Home />
-            <Introduction />
-            <SSS />
-         </div>
+         <Routes>
+            <Route
+               path="/"
+               element={<HomePage />}
+            />
+            <Route
+               path="/signup"
+               element={<SignPage />}
+            />
+            <Route
+               path="/signup"
+               element={<SignPage />}
+            />
+         </Routes>
+
+         <Footer />
       </div>
    );
 }

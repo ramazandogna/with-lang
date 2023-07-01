@@ -1,0 +1,101 @@
+.sign-page-section {
+   height: calc(100vh - 6rem);
+   display: flex;
+}
+
+.sing-page-wrapper {
+   display: flex;
+   justify-content: center;
+   flex-direction: columns;
+   align-items: center;
+   color: var(--dark-color);
+}
+
+.registration-form {
+   width: 370px;
+   margin: 0 auto;
+   padding: 20px;
+   background-color: var(--first-color);
+   border-radius: 0.5rem;
+}
+
+input::placeholder {
+   color: #000;
+   letter-spacing: 1px;
+}
+
+.registration-form-h2 {
+   color: var(--light-color);
+   text-align: center;
+   font-size: 30px;
+   margin-bottom: 2rem;
+   padding: 1rem 0;
+   border-bottom: 4px solid var(--light-color);
+}
+
+.form-group {
+   margin-bottom: 20px;
+}
+
+label {
+   display: block;
+   margin-bottom: 5px;
+   font-weight: bold;
+   color: var(--light-color);
+}
+
+input[type='text'],
+input[type='email'],
+input[type='number'],
+select {
+   width: 100%;
+   padding: 10px;
+   border: none;
+   padding: 1rem 1rem;
+   border-radius: 0.5rem;
+}
+
+select {
+   height: 50px;
+}
+
+.submit-button {
+   display: block;
+   margin-top: 2rem;
+   width: 100%;
+   padding: 10px;
+   background-color: var(--light-color);
+   color: #fff;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   color: var(--dark-color);
+}
+
+.submit-button:hover {
+   background-color: var(--dark-color);
+   color: var(--light-color);
+}
+
+.zaten-uye {
+   color: var(--light-color);
+   font-size: 12px;
+   text-align: center;
+   margin-top: 4px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.zaten-uye-link {
+   color: var(--light-color);
+   font-weight: 300;
+   font-size: 13px;
+   padding: 0 5px;
+   border-radius: 0.5rem;
+}
+
+.zaten-uye:hover .zaten-uye-link {
+   transform: scale(1.7);
+   background-color: var(--dark-color);
+}

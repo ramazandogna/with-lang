@@ -1,5 +1,5 @@
 .accordion {
-   height: calc(100vh - 6rem);
+   min-height: calc(100vh - 6rem);
    width: 100%;
    margin-top: 10%;
    display: flex;
@@ -7,11 +7,12 @@
    flex-direction: column;
    text-align: center;
    padding: 0 4rem;
+   position: relative;
 }
 
 .accordion-heading {
    font-size: 48px;
-   margin: 2rem 0;
+   margin: 1rem 0;
 }
 
 .accordion-questions-section {
@@ -22,11 +23,12 @@
    width: 100%;
    display: flex;
    flex-direction: column;
+   margin-bottom: 1.5rem;
 }
 
 .accordion-item {
    background: #393f49;
-   color: var(--dark-color);
+   color: #ffffffbe;
    padding: 1.5rem;
    cursor: pointer;
    transition: background-color 0.3s;
@@ -57,4 +59,9 @@
    margin-top: 2rem;
    font-size: 20px;
    text-align: left;
+}
+
+.acordion-button {
+   position: fixed;
+   bottom: 10px;
 }

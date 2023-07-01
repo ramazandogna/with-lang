@@ -10,6 +10,11 @@ const SSS = () => {
          <div className="accordion-questions-section">
             <SSSquestions />
          </div>
+         <div>
+            <div className="home-brand-button">
+               <p className="home-brand-button-text">TIKLA BAŞLA</p>
+            </div>
+         </div>
       </div>
    );
 };

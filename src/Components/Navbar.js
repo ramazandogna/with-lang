@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { MdNightlight } from 'react-icons/md';
 
 function Navbar() {
-   const [isNightMode, setIsNightMode] = useState(true);
+   const [isNightMode, setIsNightMode] = useState(false);
 
    useEffect(() => {
       if (isNightMode) {
@@ -45,8 +45,8 @@ function Navbar() {
                      </div>
                   )}
                </div>
-               <Link to="/">
-                  <button className="login-button">LOG IN</button>
+               <Link to="/signup">
+                  <button className="login-button">KAYIT OL</button>
                </Link>
             </div>
          </div>

@@ -1,9 +1,9 @@
-import '../Assets/Styles/home.css';
+import '../Assets/Styles/about.css';
 
 import { AiOutlineDown } from 'react-icons/ai';
 import React from 'react';
 
-function Home() {
+function About() {
    const scrollToNextSection = () => {
       window.scrollTo({
          top: window.innerHeight,
@@ -13,22 +13,22 @@ function Home() {
 
    return (
       <div className="home-section">
-         <div className="home-wrapper">
+         <div className="home-wrapper container">
             <div className="home-brand-introduction">
-               Stream brand new Originals, blockbusters, binge-worthy series and
-               more
+               Hafızanı geliştirecek, sana İngilizce öğretecek oyunlar ve çok
+               daha fazlası
             </div>
 
             <div>
-               <p className="home-brand-free">It's completly free!</p>
+               <p className="home-brand-free">Üstelik tamamen ücretsiz!</p>
             </div>
             <div>
                <p className="home-brand-click">
-                  Click button to start new challenges*
+                  Butona tıkla ve yeni heycana yelken aç*
                </p>
             </div>
             <div className="home-brand-button">
-               <p className="home-brand-button-text">GET STARTED</p>
+               <p className="home-brand-button-text">BAŞLA</p>
             </div>
          </div>
 
@@ -42,4 +42,4 @@ function Home() {
    );
 }
 
-export default Home;
+export default About;

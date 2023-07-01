@@ -4,6 +4,10 @@
    align-items: center;
    position: relative;
    height: 100vh;
+   background-image: url(../Images/background-1.png);
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
 }
 
 .home-wrapper {
@@ -87,6 +91,6 @@
    100% {
       transform: translateY(0);
       scale: 1.27;
-      font-variant: var(--first-color);
+      color: white;
    }
 }

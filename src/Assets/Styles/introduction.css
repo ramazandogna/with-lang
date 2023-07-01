@@ -3,6 +3,7 @@
    display: flex;
    flex-direction: column;
    height: calc(100vh - 6rem);
+   margin-top: 4rem;
 }
 
 .introduction-wrapper-1 {
@@ -14,6 +15,7 @@
    align-items: center;
    background-color: var(--first-color);
 }
+
 .wrapper-1-1 {
    height: 100%;
    width: 50%;
@@ -22,7 +24,7 @@
    font-size: 2rem;
    text-align: left;
    color: var(--light-color);
-   padding: 0 1rem;
+   padding: 0 1.5rem;
 }
 
 .wrapper-1-2 {
@@ -32,7 +34,7 @@
    font-size: 5rem;
    display: flex;
    justify-content: end;
-   padding: 0 1rem;
+   padding: 0 1.5rem;
 }
 
 .introduction-wrapper-2 {
@@ -56,7 +58,7 @@
    font-size: 2rem;
    text-align: right;
    color: var(--dark-color);
-   padding: 0 1rem;
+   padding: 0 1.5rem;
 }
 
 .wrapper-2-2 {
@@ -67,9 +69,39 @@
    display: flex;
    justify-content: start;
    color: var(--dark-color);
-   padding: 0 1rem;
+   padding: 0 1.5rem;
 }
 
 .introduction-highline {
    text-decoration: underline;
+}
+
+@media screen and (max-width: 1200px) {
+   .introduction-wrapper-1 {
+      flex-direction: column;
+   }
+   .wrapper-1-1 {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+   }
+
+   .wrapper-1-2 {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+   }
+   .introduction-wrapper-2 {
+      flex-direction: column;
+   }
+   .wrapper-2-1 {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+   }
+   .wrapper-2-2 {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+   }
 }
