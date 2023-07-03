@@ -2,7 +2,7 @@
 
 :root {
    --first-color: #3a999b;
-   --second-color: #88e8d5;
+   --second-color: #73cfbd;
    --light-color: #f4fdff;
    --dark-color: #282d35;
    --gray-color-75: #dadee7;
@@ -78,7 +78,7 @@ a {
 }
 
 .app {
-   height: 100vh;
+   min-height: 100vh;
 }
 
 .app-section {
@@ -109,6 +109,11 @@ a {
    }
 }
 @media screen and (max-width: 992px) {
+   .container {
+      width: 670px;
+   }
+}
+@media screen and (max-width: 700px) {
    .container {
       width: 100%;
    }

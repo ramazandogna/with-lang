@@ -15,7 +15,6 @@ function Navbar() {
       } else {
          document.body.classList.remove('darkTheme');
       }
-      console.log(isNightMode);
    }, [isNightMode]);
 
    return (

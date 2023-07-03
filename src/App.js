@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import Footer from './Components/Footer';
 import HomePage from './Pages/HomePage';
+import Main from './Pages/Main';
 import Navbar from './Components/Navbar';
 import SignPage from './Pages/SignPage';
 
@@ -15,7 +16,7 @@ function App() {
          <Routes>
             <Route
                path="/"
-               element={<HomePage />}
+               element={<Main />}
             />
             <Route
                path="/signup"
