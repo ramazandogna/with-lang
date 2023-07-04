@@ -23,6 +23,7 @@
 
 .games-heading-container h3 {
    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande';
+   margin-left: 0.4rem;
 }
 
 .games-items-list {
@@ -31,6 +32,7 @@
    justify-content: space-between;
    gap: 0.5rem;
    margin-top: 1rem;
+   font-size: 25px;
 }
 
 .games-item-1 {
@@ -49,6 +51,7 @@
 .games-item-1:hover {
    box-shadow: inset 0 0 0 4px white;
    transform: scale(1.04);
+   font-size: 32px;
 }
 
 .games-item-2 {
@@ -67,6 +70,7 @@
 .games-item-2:hover {
    box-shadow: inset 0 0 0 4px white;
    transform: scale(1.04);
+   font-size: 32px;
 }
 
 .games-item-3 {
@@ -85,6 +89,7 @@
 .games-item-3:hover {
    box-shadow: inset 0 0 0 4px white;
    transform: scale(1.04);
+   font-size: 32px;
 }
 
 .games-item-4 {
@@ -103,6 +108,7 @@
 .games-item-4:hover {
    box-shadow: inset 0 0 0 4px white;
    transform: scale(1.04);
+   font-size: 32px;
 }
 
 @media screen and (max-width: 960px) {
@@ -111,15 +117,15 @@
    }
 
    .games-item-1 {
-      width: 95%;
+      width: 100%;
    }
    .games-item-2 {
-      width: 95%;
+      width: 100%;
    }
    .games-item-3 {
-      width: 95%;
+      width: 100%;
    }
    .games-item-4 {
-      width: 95%;
+      width: 100%;
    }
 }

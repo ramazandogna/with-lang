@@ -19,10 +19,10 @@ function Main() {
             </div>
 
             <ul className="games-items-list">
-               <li className="games-item-1">1</li>
-               <li className="games-item-2">2</li>
-               <li className="games-item-3">3</li>
-               <li className="games-item-4">4</li>
+               <li className="games-item-1">Hızlı Quiz</li>
+               <li className="games-item-2">Eş Anlamlı Kelimeler</li>
+               <li className="games-item-3">Zıt Anlamlı Kelimeler</li>
+               <li className="games-item-4">İnteraktif Öğrenme</li>
             </ul>
          </div>
       </div>

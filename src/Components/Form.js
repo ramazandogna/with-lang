@@ -36,7 +36,7 @@ function RegistrationForm() {
                type="text"
                id="fullName"
                value={fullName}
-               placeholder="Adın Soyadın"
+               placeholder="Adın Soyadın.."
                onChange={(e) => setFullName(e.target.value)}
                required
             />
@@ -71,7 +71,7 @@ function RegistrationForm() {
                type="number"
                id="age"
                value={age}
-               placeholder=""
+               placeholder="Senin yaşın.."
                onChange={(e) => setAge(e.target.value)}
                required
             />

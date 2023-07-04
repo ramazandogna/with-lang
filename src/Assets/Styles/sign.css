@@ -13,8 +13,8 @@
 
 .registration-form {
    width: 370px;
-   margin: 0 auto;
-   padding: 20px;
+   margin: 5rem auto 0 auto;
+   padding: 20px 20px 30px 20px;
    background-color: var(--first-color);
    border-radius: 0.5rem;
 }
@@ -22,6 +22,7 @@
 input::placeholder {
    color: #000;
    letter-spacing: 1px;
+   opacity: 0.3;
 }
 
 .registration-form-h2 {
@@ -63,13 +64,16 @@ select {
    display: block;
    margin-top: 2rem;
    width: 100%;
-   padding: 10px;
+   padding: 12px 8px;
    background-color: var(--light-color);
    color: #fff;
    border: none;
    border-radius: 5px;
    cursor: pointer;
    color: var(--dark-color);
+   font-size: 18px;
+   letter-spacing: 1px;
+   text-transform: uppercase;
 }
 
 .submit-button:hover {
@@ -93,9 +97,9 @@ select {
    font-size: 13px;
    padding: 0 5px;
    border-radius: 0.5rem;
+   text-decoration: underline;
 }
 
 .zaten-uye:hover .zaten-uye-link {
-   transform: scale(1.7);
-   background-color: var(--dark-color);
+   transform: scale(1.25);
 }
