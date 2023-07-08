@@ -15,8 +15,12 @@ function App() {
 
          <Routes>
             <Route
-               path="/"
+               path="/main"
                element={<Main />}
+            />
+            <Route
+               path="/"
+               element={<HomePage />}
             />
             <Route
                path="/signup"
