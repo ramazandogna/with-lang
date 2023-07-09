@@ -26,7 +26,7 @@ function FormLog() {
                }
             })
             .catch((e) => {
-               alert('wrong details');
+               alert('31 details');
                console.log(e);
             });
       } catch (e) {

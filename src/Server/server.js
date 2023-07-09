@@ -1,53 +1,49 @@
 const express = require('express');
-const collection = require('./mongo');
-const cors = require('cors');
 const app = express();
+const mongoose = require('mongoose');
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const cors = require('cors');
 app.use(cors());
+const bcrypt = require('bcryptjs');
 
-app.get('/', cors(), (req, res) => {});
-
-app.post('/', async (req, res) => {
-   const { email, password } = req.body;
-
-   try {
-      const check = await collection.findOne({ email: email });
-
-      if (check) {
-         res.json('exist');
-      } else {
-         res.json('notexist');
+mongoose
+   .connect(
+      'mongodb+srv://withlang:withlang123@withlang.rtihuni.mongodb.net/',
+      {
+         useNewUrlParser: true,
       }
-   } catch (e) {
-      res.json('fail');
-   }
-});
+   )
+   .then(() => {
+      console.log('Connected to database');
+   })
+   .catch((e) => console.log(e));
 
-app.post('/signup', async (req, res) => {
-   const { email, password, age, fullName } = req.body;
+const User = require('./userDetail');
 
-   const data = {
-      email: email,
-      password: password,
-      age: age,
-      fullName: fullName,
-   };
+app.post('/register', async (req, res) => {
+   const { fullName, email, password, age } = req.body;
 
+   const encryptedPassword = await bcrypt.hash(password, 10);
    try {
-      const check = await collection.findOne({ email: email });
+      const oldUser = await User.findOne({ email });
 
-      if (check) {
-         res.json('exist');
-      } else {
-         res.json('notexist');
-         await collection.insertMany([data]);
+      if (oldUser) {
+         return res.send({
+            error: 'User exist',
+         });
       }
-   } catch (e) {
-      res.json('fail');
+      await User.create({
+         fullName,
+         email,
+         password: encryptedPassword,
+         age,
+      });
+      res.send({ status: 'ok' });
+   } catch (error) {
+      res.send({ status: 'error' });
    }
 });
 
 app.listen(8000, () => {
-   console.log('port connected');
+   console.log('Server Starter');
 });

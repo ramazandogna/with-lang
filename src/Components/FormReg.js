@@ -1,40 +1,35 @@
-import { Link, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 
-import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function RegistrationForm() {
    const [fullName, setFullName] = useState('');
    const [email, setEmail] = useState('');
    const [age, setAge] = useState('');
    const [password, setPassword] = useState('');
-   const history = useNavigate();
 
-   const handleSubmit = async (e) => {
+   const handleSubmit = (e) => {
       e.preventDefault();
 
-      try {
-         await axios
-            .post('http://localhost:8000/signup', {
-               email,
-               password,
-               fullName,
-               age: age,
-            })
-            .then((res) => {
-               if (res.data === 'exist') {
-                  alert('User already exists');
-               } else if (res.data === 'notexist') {
-                  history('/main');
-               }
-            })
-            .catch((e) => {
-               alert('wrong details');
-               console.log(e);
-            });
-      } catch (e) {
-         console.log(e);
-      }
+      fetch('http://localhost:8000/register', {
+         method: 'POST',
+         crossDomain: true,
+         headers: {
+            'content-type': 'application/json',
+            Accept: 'application/json',
+            'Access-Control-Allow-Origin': '*',
+         },
+         body: JSON.stringify({
+            fullName,
+            email,
+            password,
+            age,
+         }),
+      })
+         .then((res) => res.json())
+         .then((data) => {
+            console.log(data, 'userRegister');
+         });
    };
 
    return (
