@@ -1,46 +1,43 @@
+import { Link, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 function FormLog() {
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
-   const [loginStatus, setLoginStatus] = useState('');
 
-   const handleSubmit = (e) => {
+   const history = useNavigate();
+
+   const handleSubmit = async (e) => {
       e.preventDefault();
 
-      // Kullanıcının gönderdiği e-posta ve şifre
-      const userData = {
-         email: email,
-         password: password,
-      };
-
-      // Backend'e istek gönderme
-      axios
-         .post('http://localhost:8000/api/login', userData)
-         .then((response) => {
-            const { token } = response.data;
-            // JWT'yi localStorage'e kaydetme
-            localStorage.setItem('token', token);
-            // Giriş başarılı mesajını ayarlama
-            setLoginStatus('Giriş başarılı!');
-         })
-         .catch((error) => {
-            // Hata durumunda hata mesajını ayarlama
-            setLoginStatus('Geçersiz e-posta veya şifre.');
-         });
-
-      // Formu sıfırla
-      setEmail('');
-      setPassword('');
+      try {
+         await axios
+            .post('http://localhost:8000/', {
+               email,
+               password,
+            })
+            .then((res) => {
+               if (res.data === 'exist') {
+                  history('/main');
+               } else if (res.data === 'notexist') {
+                  alert('User have not sign up');
+               }
+            })
+            .catch((e) => {
+               alert('wrong details');
+               console.log(e);
+            });
+      } catch (e) {
+         console.log(e);
+      }
    };
 
    return (
       <form
          className="registration-form"
-         onSubmit={handleSubmit}
+         action="POST"
       >
          <h2 className="registration-form-h2">Giriş Yap</h2>
          <div className="form-group">
@@ -66,6 +63,7 @@ function FormLog() {
             />
          </div>
          <button
+            onClick={handleSubmit}
             type="submit"
             className="submit-button"
          >
@@ -80,7 +78,6 @@ function FormLog() {
                Kayıt ol
             </Link>
          </p>
-         {loginStatus && <p className="login-status">{loginStatus}</p>}
       </form>
    );
 }

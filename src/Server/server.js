@@ -1,33 +1,53 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const collection = require('./mongo');
 const cors = require('cors');
-
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+
 const PORT = process.env.PORT || 8000;
 
-app.use(cors());
-app.use(express.json()); // JSON verileri için body-parser middleware'ini kullanıyoruz
+app.get('/', cors(), (req, res) => {});
 
-// MongoDB bağlantısı
-mongoose
-   .connect(
-      'mongodb+srv://withlang:withlang123@withlang.rtihuni.mongodb.net/users',
-      {
-         useNewUrlParser: true,
-         useUnifiedTopology: true,
+app.post('/', async (req, res) => {
+   const { email, password } = req.body;
+
+   try {
+      const check = await collection.findOne({ email: email });
+
+      if (check) {
+         res.json('exist');
+      } else {
+         res.json('notexist');
       }
-   )
-   .then(() => {
-      console.log('MongoDB bağlantısı başarılı!');
-      app.listen(PORT, () => {
-         console.log(`Sunucu çalışıyor: http://localhost:${PORT}`);
-      });
-   })
-   .catch((err) => {
-      console.error('MongoDB bağlantı hatası:', err);
-   });
+   } catch (e) {
+      res.json('fail');
+   }
+});
 
-const apiRoutes = require('./Routes/api');
-app.use('/api', apiRoutes);
+app.post('/signup', async (req, res) => {
+   const { email, password } = req.body;
 
-module.exports = app;
+   const data = {
+      email: email,
+      password: password,
+   };
+
+   try {
+      const check = await collection.findOne({ email: email });
+
+      if (check) {
+         res.json('exist');
+      } else {
+         res.json('notexist');
+         await collection.insertMany([data]);
+      }
+   } catch (e) {
+      res.json('fail');
+   }
+});
+
+app.listen(8000, () => {
+   console.log('port connected');
+});

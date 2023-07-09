@@ -1,6 +1,6 @@
+import { Link, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 function RegistrationForm() {
@@ -8,44 +8,31 @@ function RegistrationForm() {
    const [email, setEmail] = useState('');
    const [age, setAge] = useState('');
    const [password, setPassword] = useState('');
-   const [registrationStatus, setRegistrationStatus] = useState('');
+   const history = useNavigate();
 
-   const handleSubmit = (e) => {
+   const handleSubmit = async (e) => {
       e.preventDefault();
 
-      // Form verilerini kullanarak yapılacak işlemler
-      console.log('Ad Soyad:', fullName);
-      console.log('E-posta:', email);
-      console.log('Yaş:', age);
-      console.log('Şifre:', password);
-
-      // Kullanıcıyı kaydetmek için backend'e istek gönderin
-      axios
-         .post('http://localhost:8000/api/register', {
-            fullName,
-            email,
-
-            age,
-            password,
-         })
-         .then((response) => {
-            console.log(response.data.message);
-            setRegistrationStatus('Kayıt başarılı!');
-         })
-         .catch((error) => {
-            console.error('Kayıt hatası:', error);
-            if (error.response && error.response.status === 409) {
-               setRegistrationStatus('Bu e-posta ile zaten kayıt olunmuş.');
-            } else {
-               setRegistrationStatus('Kayıt sırasında bir hata oluştu.');
-            }
-         });
-
-      // Formu sıfırla
-      setFullName('');
-      setEmail('');
-      setAge('');
-      setPassword('');
+      try {
+         await axios
+            .post('http://localhost:8000/signup', {
+               email,
+               password,
+            })
+            .then((res) => {
+               if (res.data === 'exist') {
+                  alert('User already exists');
+               } else if (res.data === 'notexist') {
+                  history('/main');
+               }
+            })
+            .catch((e) => {
+               alert('wrong details');
+               console.log(e);
+            });
+      } catch (e) {
+         console.log(e);
+      }
    };
 
    return (
@@ -114,9 +101,6 @@ function RegistrationForm() {
                GİRİŞ YAP
             </Link>
          </p>
-         {registrationStatus && (
-            <p className="registration-status">{registrationStatus}</p>
-         )}
       </form>
    );
 }
