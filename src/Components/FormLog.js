@@ -1,37 +1,33 @@
-import { Link, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 
-import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function FormLog() {
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
 
-   const history = useNavigate();
-
-   const handleSubmit = async (e) => {
+   const handleSubmit = (e) => {
       e.preventDefault();
 
-      try {
-         await axios
-            .post('http://localhost:8000/', {
-               email,
-               password,
-            })
-            .then((res) => {
-               if (res.data === 'exist') {
-                  history('/main');
-               } else if (res.data === 'notexist') {
-                  alert('User have not sign up');
-               }
-            })
-            .catch((e) => {
-               alert('31 details');
-               console.log(e);
-            });
-      } catch (e) {
-         console.log(e);
-      }
+      fetch('http://localhost:8000/login-user', {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+         },
+         body: JSON.stringify({
+            email,
+            password,
+         }),
+      })
+         .then((res) => res.json())
+         .then((data) => {
+            console.log(data, 'userLogin');
+            alert('giriş başarılı');
+            window.localStorage.setItem('token', data.data);
+            window.location.href = '/main';
+         })
+         .catch((error) => {});
    };
 
    return (

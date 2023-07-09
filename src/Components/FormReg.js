@@ -13,11 +13,9 @@ function RegistrationForm() {
 
       fetch('http://localhost:8000/register', {
          method: 'POST',
-         crossDomain: true,
          headers: {
-            'content-type': 'application/json',
+            'Content-Type': 'application/json',
             Accept: 'application/json',
-            'Access-Control-Allow-Origin': '*',
          },
          body: JSON.stringify({
             fullName,
@@ -28,7 +26,14 @@ function RegistrationForm() {
       })
          .then((res) => res.json())
          .then((data) => {
-            console.log(data, 'userRegister');
+            if (data.status === 'ok') {
+               console.log('Kayıt başarılı.');
+            } else {
+               console.log('Kayıt hatası:', data.error);
+            }
+         })
+         .catch((error) => {
+            console.log('Kayıt hatası:', error);
          });
    };
 

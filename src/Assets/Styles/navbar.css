@@ -116,3 +116,46 @@
 .dayMode:active .day-icon {
    transform: translateY(100%);
 }
+
+.nav-login-wrapper {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 4px;
+}
+
+.profile-icon {
+   border: none;
+   font-size: 20px;
+   display: flex;
+   align-items: center;
+   padding: 11px;
+   border-radius: 0.5rem;
+   color: var(--light-color);
+   cursor: pointer;
+   background-color: var(--dark-color);
+   transition: 0.3s ease-out;
+}
+
+.profile-icon:hover {
+   background-color: var(--light-color);
+   color: var(--dark-color);
+   transform: scale(1.1);
+}
+
+.logout-button {
+   cursor: pointer;
+   padding: 10px 10px;
+   font-size: 20px;
+   color: var(--dark-color);
+   background-color: var(--second-color);
+   border: 1px solid var(--first-color);
+   border-radius: 0.5rem;
+   transition: all 0.5s;
+}
+
+.logout-button:hover {
+   color: var(--light-color);
+   background-color: var(--first-color);
+   border: 1px solid var(--dark-color);
+}
