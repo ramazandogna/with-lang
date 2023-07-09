@@ -23,15 +23,10 @@ function App() {
                element={<HomePage />}
             />
             <Route
-               path="/signup"
-               element={<SignPage />}
-            />
-            <Route
-               path="/signup"
+               path="/register"
                element={<SignPage />}
             />
          </Routes>
-
          <Footer />
       </div>
    );

@@ -44,7 +44,7 @@ function Navbar() {
                      </div>
                   )}
                </div>
-               <Link to="/signup">
+               <Link to="/register">
                   <button className="login-button">KAYIT OL</button>
                </Link>
             </div>
