@@ -33,7 +33,7 @@
    align-items: center;
    font-size: 4rem;
    display: flex;
-   justify-content: end;
+   justify-content: flex-end;
    padding: 0 1.5rem;
 }
 
@@ -67,7 +67,7 @@
    align-items: center;
    font-size: 4rem;
    display: flex;
-   justify-content: start;
+   justify-content: flex-start;
    color: var(--dark-color);
    padding: 0 1.5rem;
 }

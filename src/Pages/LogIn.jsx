@@ -1,18 +1,16 @@
-import '../Assets/Styles/sign.css';
-
-import Form from '../Components/Form';
+import FormLog from '../Components/FormLog';
 import React from 'react';
 
-function SignPage() {
+function LogIn() {
    return (
       <div className="sign-page-section">
          <div className="container">
             <div className="sing-page-wrapper">
-               <Form />
+               <FormLog />
             </div>
          </div>
       </div>
    );
 }
 
-export default SignPage;
+export default LogIn;

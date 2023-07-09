@@ -109,7 +109,7 @@ function RegistrationForm() {
             Zaten üye misin?{' '}
             <Link
                className="zaten-uye-link"
-               to="/sign"
+               to="/login"
             >
                GİRİŞ YAP
             </Link>

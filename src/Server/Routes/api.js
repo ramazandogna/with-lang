@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User'); // Kullanıcı modeli
+require('dotenv').config();
+
+const secretKey = process.env.JWT_SECRET_KEY;
 
 // Kayıt ol endpoint'i
 router.post('/register', async (req, res) => {
@@ -37,6 +40,49 @@ router.post('/register', async (req, res) => {
       // Diğer hata durumlarında hata dön
       return res.status(500).json({
          error: 'Kayıt sırasında bir hata oluştu.',
+      });
+   }
+});
+
+const jwt = require('jsonwebtoken');
+
+// Giriş yap endpoint'i
+router.post('/login', async (req, res) => {
+   try {
+      const { email, password } = req.body;
+
+      // Kullanıcının doğrulanması
+      const user = await User.findOne({ email });
+
+      if (!user) {
+         return res.status(401).json({
+            error: 'Geçersiz e-posta veya şifre.',
+         });
+      }
+
+      // Şifrenin doğrulanması
+      const isMatch = await user.comparePassword(password);
+
+      if (!isMatch) {
+         return res.status(401).json({
+            error: 'Geçersiz e-posta veya şifre.',
+         });
+      }
+
+      // JWT oluşturma
+      const token = jwt.sign(
+         { userId: user._id, email: user.email },
+         secretKey,
+         { expiresIn: '1h' }
+      );
+
+      return res.status(200).json({
+         message: 'Giriş başarılı!',
+         token: token,
+      });
+   } catch (error) {
+      return res.status(500).json({
+         error: 'Giriş sırasında bir hata oluştu.',
       });
    }
 });

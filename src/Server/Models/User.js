@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const bcrypt = require('bcryptjs');
 // Kullanıcı şema tanımı
 const userSchema = new mongoose.Schema({
    fullName: {
@@ -20,6 +20,15 @@ const userSchema = new mongoose.Schema({
       required: true,
    },
 });
+
+userSchema.methods.comparePassword = async function (password) {
+   try {
+      const isMatch = await bcrypt.compare(password, this.password);
+      return isMatch;
+   } catch (error) {
+      throw error;
+   }
+};
 
 // Kullanıcı modeli
 const User = mongoose.model('User', userSchema);

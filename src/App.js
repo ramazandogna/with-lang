@@ -4,9 +4,10 @@ import { Route, Routes } from 'react-router-dom';
 
 import Footer from './Components/Footer';
 import HomePage from './Pages/HomePage';
+import LogIn from './Pages/LogIn';
 import Main from './Pages/Main';
 import Navbar from './Components/Navbar';
-import SignPage from './Pages/SignPage';
+import Register from './Pages/Register';
 
 function App() {
    return (
@@ -23,8 +24,12 @@ function App() {
                element={<HomePage />}
             />
             <Route
+               path="/login"
+               element={<LogIn />}
+            />
+            <Route
                path="/register"
-               element={<SignPage />}
+               element={<Register />}
             />
          </Routes>
          <Footer />
