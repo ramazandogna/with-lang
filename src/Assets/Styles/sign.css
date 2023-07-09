@@ -1,6 +1,10 @@
 .sign-page-section {
-   height: calc(100vh - 6rem);
+   height: calc(100vh);
    display: flex;
+   background-image: url(../Images/background-1.png);
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
 }
 
 .sing-page-wrapper {

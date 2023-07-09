@@ -7,8 +7,8 @@ function HomePage() {
    return (
       <>
          <About />
+         <Introduction />
          <div className="container">
-            <Introduction />
             <SSS />
          </div>
       </>

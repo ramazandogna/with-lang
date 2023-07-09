@@ -4,6 +4,7 @@
    flex-direction: column;
    height: calc(100vh - 6rem);
    margin-top: 4rem;
+   padding: 0 2rem;
 }
 
 .introduction-wrapper-1 {

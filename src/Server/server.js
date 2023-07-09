@@ -6,8 +6,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-const PORT = process.env.PORT || 8000;
-
 app.get('/', cors(), (req, res) => {});
 
 app.post('/', async (req, res) => {
@@ -27,11 +25,13 @@ app.post('/', async (req, res) => {
 });
 
 app.post('/signup', async (req, res) => {
-   const { email, password } = req.body;
+   const { email, password, age, fullName } = req.body;
 
    const data = {
       email: email,
       password: password,
+      age: age,
+      fullName: fullName,
    };
 
    try {

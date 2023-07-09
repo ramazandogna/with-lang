@@ -18,6 +18,8 @@ function RegistrationForm() {
             .post('http://localhost:8000/signup', {
                email,
                password,
+               fullName,
+               age: age,
             })
             .then((res) => {
                if (res.data === 'exist') {
