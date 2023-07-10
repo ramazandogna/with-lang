@@ -7,6 +7,9 @@ import HomePage from './Pages/HomePage';
 import LogIn from './Pages/LogIn';
 import Main from './Pages/Main';
 import Navbar from './Components/Navbar';
+import Profile from './Pages/Profile';
+import Questions from './Apps/Quiz/components/Questions';
+import Quiz from './Apps/Quiz/components/Main';
 import Register from './Pages/Register';
 
 function App() {
@@ -20,6 +23,15 @@ function App() {
                element={<Main />}
             />
             <Route
+               path="/quiz"
+               element={<Quiz />}
+            />
+            <Route
+               path="/quiz/quiz"
+               element={<Questions />}
+            />
+
+            <Route
                path="/"
                element={<HomePage />}
             />
@@ -30,6 +42,10 @@ function App() {
             <Route
                path="/register"
                element={<Register />}
+            />
+            <Route
+               path="/profile"
+               element={<Profile />}
             />
          </Routes>
          <Footer />

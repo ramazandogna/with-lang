@@ -33,6 +33,7 @@ function Navbar() {
       // Oturumu kapatma işlemi - JWT ve token ile ilgili gereksinimlere göre yapılmalı
       localStorage.removeItem('token'); // Token'ı localStorage'dan kaldırabilirsiniz veya uygun bir şekilde işleyebilirsiniz
       setIsLoggedIn(false); // Oturum durumunu false olarak ayarlıyoruz
+      window.location.href = '/login';
    };
 
    return (
@@ -69,7 +70,7 @@ function Navbar() {
                            <CgProfile />
                         </button>
                      </Link>
-                     <Link to="/register">
+                     <Link onClick={handleLogout}>
                         <button className="logout-button">Çıkış</button>
                      </Link>
                   </div>

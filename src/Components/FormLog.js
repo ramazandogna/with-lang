@@ -27,7 +27,9 @@ function FormLog() {
             window.localStorage.setItem('token', data.data);
             window.location.href = '/main';
          })
-         .catch((error) => {});
+         .catch((error) => {
+            console.error(error);
+         });
    };
 
    return (

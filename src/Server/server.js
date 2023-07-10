@@ -48,6 +48,31 @@ app.post('/register', async (req, res) => {
    }
 });
 
+app.post('/userData', async (req, res) => {
+   const { token } = req.body;
+   try {
+      const user = jwt.verify(token, JWT_SECRET, (err, res) => {
+         if (err) {
+            return 'token expired';
+         }
+         return res;
+      });
+      console.log(user);
+      if (user === 'token expired') {
+         return res.send({ status: 'error', data: 'token expired' });
+      }
+
+      const useremail = user.email;
+      User.findOne({ email: useremail })
+         .then((data) => {
+            res.send({ status: 'ok', data: JSON.stringify(data) });
+         })
+         .catch((error) => {
+            res.send({ status: 'error', data: error });
+         });
+   } catch (error) {}
+});
+
 app.post('/login-user', async (req, res) => {
    const { email, password } = req.body;
 
@@ -59,7 +84,7 @@ app.post('/login-user', async (req, res) => {
       });
    }
    if (await bcrypt.compare(password, user.password)) {
-      const token = jwt.sign({}, JWT_SECRET);
+      const token = jwt.sign({ email: user.email }, JWT_SECRET);
       if (res.status(201)) {
          return res.json({ status: 'ok', data: token });
       } else {
