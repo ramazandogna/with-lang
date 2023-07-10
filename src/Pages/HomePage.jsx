@@ -1,9 +1,18 @@
+import React, { useEffect } from 'react';
+
 import About from './About';
 import Introduction from './Introduction';
-import React from 'react';
 import SSS from './SSS';
 
 function HomePage() {
+   useEffect(() => {
+      const token = window.localStorage.getItem('token');
+      if (token) {
+         window.location.href = '/main';
+         return;
+      }
+   }, []);
+
    return (
       <>
          <About />

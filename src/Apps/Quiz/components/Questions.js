@@ -20,6 +20,16 @@ export default function Questions({ onChecked }) {
       dispatch(updateResult({ trace, checked }));
    }, [checked]);
 
+   useEffect(() => {
+      if (questions) {
+         const parsedQuestions = {
+            ...questions,
+            options: questions.options.map((option) => JSON.parse(option)),
+         };
+         dispatch(updateResult({ trace, checked }));
+      }
+   }, [questions]);
+
    function onSelect(i) {
       onChecked(i);
       setChecked(i);

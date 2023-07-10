@@ -7,10 +7,10 @@ import HomePage from './Pages/HomePage';
 import LogIn from './Pages/LogIn';
 import Main from './Pages/Main';
 import Navbar from './Components/Navbar';
+import OppositeGame from './Apps/Opposite/OppositeGame';
 import Profile from './Pages/Profile';
-import Questions from './Apps/Quiz/components/Questions';
-import Quiz from './Apps/Quiz/components/Main';
 import Register from './Pages/Register';
+import SynonymGame from './Apps/Synonym/SynonymGame';
 
 function App() {
    return (
@@ -22,15 +22,6 @@ function App() {
                path="/main"
                element={<Main />}
             />
-            <Route
-               path="/quiz"
-               element={<Quiz />}
-            />
-            <Route
-               path="/quiz/quiz"
-               element={<Questions />}
-            />
-
             <Route
                path="/"
                element={<HomePage />}
@@ -46,6 +37,14 @@ function App() {
             <Route
                path="/profile"
                element={<Profile />}
+            />
+            <Route
+               path="/main/synonym"
+               element={<SynonymGame />}
+            />
+            <Route
+               path="/main/opposite"
+               element={<OppositeGame />}
             />
          </Routes>
          <Footer />
