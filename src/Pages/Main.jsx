@@ -29,12 +29,8 @@ function Main() {
             </div>
 
             <ul className="games-items-list">
-               <a
-                  className="games-item-1"
-                  href="http://localhost:3001"
-               >
-                  <li>Hızlı Quiz</li>
-               </a>
+               <li className="games-item-1">Hızlı Quiz</li>
+
                <Link
                   to="synonym"
                   className="games-item-2"
