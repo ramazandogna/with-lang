@@ -41,10 +41,29 @@ function Profile() {
       <div className="app">
          <div className="app-section">
             <div className="container">
-               <h2> User Profile:</h2>
-               <div>Name: {parsedData.fullName}</div>
-               <div>{parsedData.age}</div>
-               <div>{parsedData.email}</div>
+               <div>
+                  <h2> Kullanıcı Profili:</h2>
+                  <div>Senin adın: {parsedData.fullName}</div>
+                  <div>Senin yaşın: {parsedData.age}</div>
+                  <div>Senin epostan: {parsedData.email}</div>
+               </div>
+               <br />
+               <div>
+                  <h3>Senin Quiz Score</h3>
+                  <div>Doğru sayın: {parsedData.quiz[0].dogru}</div>
+                  <div>Yanlış sayın: {parsedData.quiz[0].yanlis}</div>
+                  <div>Durum: Geçti</div>
+               </div>
+               <br />
+               <div>
+                  <h3>Eş Anlamı Kelime Skoru:</h3>
+                  <div>{parsedData.esanlam} Puan</div>
+               </div>
+               <br />
+               <div>
+                  <h3>Zıt Anlamlı Kelime Skoru:</h3>
+                  <div>{parsedData.zitanlam} Puan</div>
+               </div>
             </div>
          </div>
       </div>

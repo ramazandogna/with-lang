@@ -69,10 +69,14 @@ const OppositeGame = () => {
    return (
       <div className="app app-section">
          <div className="container">
-            <h2>Opposite Game</h2>
+            <h2 className="game-h2">Opposite Game</h2>
             <p className="score">Score: {score}</p>
-            <form onSubmit={handleSubmit}>
+            <form
+               className="game-form"
+               onSubmit={handleSubmit}
+            >
                <input
+                  className="game-text-input"
                   type="text"
                   value={inputValue}
                   onChange={handleInputChange}
@@ -81,6 +85,7 @@ const OppositeGame = () => {
                <button
                   onClick={handleRandomWord}
                   type="submit"
+                  className="submit"
                >
                   Submit
                </button>

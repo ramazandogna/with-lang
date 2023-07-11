@@ -5,6 +5,7 @@ const userDetailsSchema = new mongoose.Schema({
    age: Number,
    email: { type: String, unique: true },
    password: String,
+   quiz: Array,
 });
 
 module.exports = mongoose.model('UserInfo', userDetailsSchema);

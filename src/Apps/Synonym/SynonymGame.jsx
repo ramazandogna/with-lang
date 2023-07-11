@@ -1,3 +1,5 @@
+import './synonymgame.css';
+
 import React, { useState } from 'react';
 
 import axios from 'axios';
@@ -69,18 +71,23 @@ const SynonymGame = () => {
    return (
       <div className="app app-section">
          <div className="container">
-            <h2>Synonym Game</h2>
-            <p className="score">Score: {score}</p>
-            <form onSubmit={handleSubmit}>
+            <h2 className="game-h2">Synonym Game</h2>
+            <div className="score">Score: {score}</div>
+            <form
+               className="game-form"
+               onSubmit={handleSubmit}
+            >
                <input
+                  className="game-text-input"
                   type="text"
                   value={inputValue}
                   onChange={handleInputChange}
                   placeholder="Enter a word"
                />
                <button
+                  className="submit"
                   onClick={handleRandomWord}
-                  type="submit"
+                  type="submit-button"
                >
                   Submit
                </button>
